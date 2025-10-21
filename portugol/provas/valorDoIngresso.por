@@ -1,38 +1,42 @@
 programa {
   funcao inicio() {
+    real valor_inicial, valor_final
     inteiro idade, dia_da_semana
-    real preco_base, total_do_ingresso
 
-    escreva("\nDigite sua idade: ")
-    leia(idade)
-
-    escreva("\nEscolha o dia da semana de acordo com o número \n")
-    escreva("\nDOMINGO -> (1) \nSEGUNDA-FEIRA -> (2) \nTERÇA-FEIRA -> (3)")
-    escreva("\nQUARTA-FEIRA -> (4) \nQUINTA-FEIRA -> (5) \nSEXTA-FEIRA -> (6) \nSÂBADO -> (7)\n")
-    escreva("\nDigite sua escolha aqui: ")
+    escreva("Informe o dia da semana, de acordo com os números abaixos:\n 1 - Dom\n 2 - Seg\n 3 - Ter\n 4 - Qua\n 5 - Qui\n 6 - Sex\n 7 - Sab\n")
+    escreva("\nQual é a sua escolha? ")
     leia(dia_da_semana)
 
     escolha(dia_da_semana){
       caso 1:
-      preco_base = 20.00
+      caso 7:
+      valor_inicial = 20
+      pare
+      caso 2:
+      caso 3:
+      valor_inicial = 15
       pare
       caso 4:
-      preco_base = 8.00
+      valor_inicial = 8.50
       pare
-      caso 7:
-      preco_base = 20.00
+      caso 5:
+      caso 6:
+      valor_inicial = 15
       pare
       caso contrario:
-      preco_base = 15.00
+      valor_inicial = 0
     }
-
-    se(idade >= 60){
-      total_do_ingresso = preco_base * 0.5
+    se(valor_inicial == 0){
+      escreva("Dia inválido")
     }senao{
-      total_do_ingresso = preco_base
+      escreva("Informe a sua idade: ")
+      leia(idade)
+      se(idade >= 60){
+        valor_final = valor_inicial * 0.5
+      }senao{
+        valor_final = valor_inicial
+      }
+      escreva("\nO valor que você pagará é: R$", valor_final)
     }
-
-    escreva("\nValor total a pagar é: R$", total_do_ingresso)
-
   }
 }
